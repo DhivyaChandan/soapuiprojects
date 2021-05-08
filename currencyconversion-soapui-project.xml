@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="1032753c-fa81-4f42-b7a2-3bbb6fc086de" activeEnvironment="Default" name="currencyconversion" resourceRoot="" soapui-version="4.0.1.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="b1419043-5bed-4899-b24e-e5ff478f37bf" wsaVersion="NONE" name="ConverterSoap" type="wsdl" bindingName="{http://tempuri.org/}ConverterSoap" soapVersion="1_1" anonymous="optional" definition="http://currencyconverter.kowabunga.net/converter.asmx?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://currencyconverter.kowabunga.net/converter.asmx</con:endpoint></con:endpoints><con:operation id="013b47e0-032c-414c-aec7-5dde58a22020" isOneWay="false" action="http://tempuri.org/ConvertDataTableColumn" name="ConvertDataTableColumn" bindingOperationName="ConvertDataTableColumn" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b18c4c10-755d-4376-9bf1-12d0d2eb7847" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://currencyconverter.kowabunga.net/converter.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:ConvertDataTableColumn>\r
+         <!--Optional:-->\r
+         <tem:ds>\r
+            <xs:schema>\r
+               <!--Ignoring type [{http://www.w3.org/2001/XMLSchema}schema]-->\r
+            </xs:schema>\r
+            <!--You may enter ANY elements at this point-->\r
+         </tem:ds>\r
+         <tem:TableIndex>?</tem:TableIndex>\r
+         <!--Optional:-->\r
+         <tem:ColumnName>?</tem:ColumnName>\r
+         <!--Optional:-->\r
+         <tem:FromCurrency>?</tem:FromCurrency>\r
+         <!--Optional:-->\r
+         <tem:ToCurrency>?</tem:ToCurrency>\r
+      </tem:ConvertDataTableColumn>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ConvertDataTableColumn"/></con:call></con:operation><con:operation id="5260b4b8-737f-4eaf-b756-d273ba0ad787" isOneWay="false" action="http://tempuri.org/GetConversionAmount" name="GetConversionAmount" bindingOperationName="GetConversionAmount" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7d0e6179-8784-4425-be94-a967f1bc229e" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://currencyconverter.kowabunga.net/converter.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetConversionAmount>\r
+         <!--Optional:-->\r
+         <tem:CurrencyFrom>?</tem:CurrencyFrom>\r
+         <!--Optional:-->\r
+         <tem:CurrencyTo>?</tem:CurrencyTo>\r
+         <tem:RateDate>?</tem:RateDate>\r
+         <tem:Amount>?</tem:Amount>\r
+      </tem:GetConversionAmount>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/GetConversionAmount"/></con:call></con:operation><con:operation id="9e952e97-4e3e-493d-819a-7f313ddf25b4" isOneWay="false" action="http://tempuri.org/GetConversionRate" name="GetConversionRate" bindingOperationName="GetConversionRate" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f42d1682-f9f5-4b76-b7e7-6b8fe59b6133" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://currencyconverter.kowabunga.net/converter.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetConversionRate>\r
+         <!--Optional:-->\r
+         <tem:CurrencyFrom>?</tem:CurrencyFrom>\r
+         <!--Optional:-->\r
+         <tem:CurrencyTo>?</tem:CurrencyTo>\r
+         <tem:RateDate>?</tem:RateDate>\r
+      </tem:GetConversionRate>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/GetConversionRate"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="4ae058d5-062d-42c5-859b-5d84f6142324" isOneWay="false" action="http://tempuri.org/GetCultureInfo" name="GetCultureInfo" bindingOperationName="GetCultureInfo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d5f61f30-a4f0-4be9-a35d-1674b2af5b5d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://currencyconverter.kowabunga.net/converter.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetCultureInfo>\r
+         <!--Optional:-->\r
+         <tem:Currency>?</tem:Currency>\r
+      </tem:GetCultureInfo>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/GetCultureInfo"/></con:call></con:operation><con:operation id="f464fd12-2ab0-4539-aef8-01f2440e29a0" isOneWay="false" action="http://tempuri.org/GetCurrencies" name="GetCurrencies" bindingOperationName="GetCurrencies" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="292cb0bc-e8c4-42f2-8baf-964da289052d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://currencyconverter.kowabunga.net/converter.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetCurrencies/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/GetCurrencies"/></con:call></con:operation><con:operation id="c5c9eb6b-17f5-4eb4-8e1b-f84d27917782" isOneWay="false" action="http://tempuri.org/GetCurrencyRate" name="GetCurrencyRate" bindingOperationName="GetCurrencyRate" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d1a891ac-88f7-4239-a98a-ab3388ce38ce" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://currencyconverter.kowabunga.net/converter.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetCurrencyRate>\r
+         <!--Optional:-->\r
+         <tem:Currency>?</tem:Currency>\r
+         <tem:RateDate>?</tem:RateDate>\r
+      </tem:GetCurrencyRate>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/GetCurrencyRate"/></con:call></con:operation><con:operation id="8a0f5d11-5157-482e-8c94-f1b6eed0f5b2" isOneWay="false" action="http://tempuri.org/GetCurrencyRates" name="GetCurrencyRates" bindingOperationName="GetCurrencyRates" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3ef9ae8a-6594-49aa-9b56-8f962cb1e6db" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://currencyconverter.kowabunga.net/converter.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetCurrencyRates>\r
+         <tem:RateDate>?</tem:RateDate>\r
+      </tem:GetCurrencyRates>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/GetCurrencyRates"/></con:call></con:operation><con:operation id="b5a9eb55-20ce-4faa-8409-e78f89310eb7" isOneWay="false" action="http://tempuri.org/GetLastUpdateDate" name="GetLastUpdateDate" bindingOperationName="GetLastUpdateDate" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="32a0a2b3-0f66-43a1-8572-f93f0b7d2424" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint> http://currencyconverter.kowabunga.net/converter.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetLastUpdateDate/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/GetLastUpdateDate"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="bc33d955-849c-4d8c-a8f7-a2672a98639d" name="TestSuite 1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="15fced29-f061-4c55-8a5f-9c9d297c31f6" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="request" id="e4ae1b50-f39b-4e6b-9e21-364f784ec8f4" name="Request1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ConverterSoap</con:interface><con:operation>GetConversionRate</con:operation><con:request name="Request1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="14c5e10d-571a-47a6-84c5-22b63cea3699"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://currencyconverter.kowabunga.net/converter.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetConversionRate>\r
+         <!--Optional:-->\r
+         <tem:CurrencyFrom>${#TestCase#fc}</tem:CurrencyFrom>\r
+         <!--Optional:-->\r
+         <tem:CurrencyTo>${#TestCase#tc}</tem:CurrencyTo>\r
+         <tem:RateDate>${#TestCase#date}</tem:RateDate>\r
+      </tem:GetConversionRate>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="6094af39-01ea-4a74-8a42-4f0b0ab65baf" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/GetConversionRate"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="Groovy Script" id="95cf7e62-1984-4894-834e-e10e5a77424a"><con:settings/><con:config><script>import com.eviware.soapui.impl.wsdl.testcase.WsdlTestCaseRunner;
+import com.eviware.soapui.impl.wsdl.testcase.WsdlTestRunContext;
+import com.eviware.soapui.support.GroovyUtils;
+
+//Set values to properties
+def tc=testRunner.testCase;
+tc.setPropertyValue("fc","AUD");
+tc.setPropertyValue("tc","INR");
+tc.setPropertyValue("date","2021-05-06T00:00:00");
+def ts=tc.getTestStepByName("Request1");
+//Redefine "testRunner" and "testStepContext" built-in objects for SOAP
+testRunner=new WsdlTestCaseRunner(tc,null);
+testStepContext=new WsdlTestRunContext(ts);
+//Submit parameirized request to Service and store response
+ts.run(testRunner,testStepContext);
+def res=ts.getPropertyValue("response");
+//Analyzing response
+def gu=new GroovyUtils(context);
+def holder=gu.getXmlHolder(res);
+def output=holder.getNodeValue("//*:GetConversionRateResult");
+log.info(output);</script></con:config></con:testStep><con:testStep type="groovy" name="Groovy Script1" id="77661486-e040-4ae7-97da-f10dd948c8f3"><con:settings/><con:config><script>import com.eviware.soapui.impl.wsdl.testcase.WsdlTestCaseRunner;
+import com.eviware.soapui.impl.wsdl.testcase.WsdlTestRunContext;
+import com.eviware.soapui.support.GroovyUtils;
+
+//Open text files in "Read" and "write" modes
+def f1=new File("C:\\Users\\Chandan\\eclipse-workspace\\soapuiworkspace\\currencytestdata.txt");
+def fr=new FileReader(f1);
+def br=new BufferedReader(fr);
+def f2=new File("C:\\Users\\Chandan\\eclipse-workspace\\soapuiworkspace\\currencytestresults.txt");
+def fw=new FileWriter(f2);
+def bw=new BufferedWriter(fw);
+//Parameterize request parameters
+def x;
+while((x=br.readLine())!=null)
+{
+	String[] p=x.split(",");
+	//Set values to properties
+	def tc=testRunner.testCase;
+	tc.setPropertyValue("fc",p[0]);
+	tc.setPropertyValue("tc",p[1]);
+	tc.setPropertyValue("date",p[2]);
+	def ts=tc.getTestStepByName("Request1");
+	//Redefine "testRunner" and "testStepContext" objects for SOAP
+	testRunner=new WsdlTestCaseRunner(tc,null);
+	testStepContext=new WsdlTestRunContext(ts);
+	//Submit parameirized request to Service and store response
+	ts.run(testRunner,testStepContext);
+	def res=ts.getPropertyValue("response");
+	log.info(res);
+	//Analyzing response
+	def gu=new GroovyUtils(context);
+	def holder=gu.getXmlHolder(res);
+	def output=holder.getNodeValue("//*:GetConversionRateResult");
+	bw.write(output);
+	bw.newLine();
+}
+br.close();
+fr.close();
+bw.close();
+fw.close();</script></con:config></con:testStep><con:testStep type="groovy" name="Groovy Script2" id="3b458f38-9cc5-40d7-803b-771d94817e17"><con:settings/><con:config><script>import com.eviware.soapui.impl.wsdl.testcase.WsdlTestCaseRunner;
+import com.eviware.soapui.impl.wsdl.testcase.WsdlTestRunContext;
+import com.eviware.soapui.support.GroovyUtils;
+
+//use POI-OOXML 3.9 because it has xmlbeans 2.3.0
+//As of now, SOAPUI tool support xmlbeans 2.3.0 only
+import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+
+//Open file in read mode
+File f=new File("C:\\Users\\Chandan\\eclipse-workspace\\soapuiworkspace\\Book3.xlsx");
+FileInputStream fi=new FileInputStream(f);
+Workbook wb=WorkbookFactory.create(fi);
+Sheet sh=wb.getSheet("Sheet1");
+int nour=sh.getPhysicalNumberOfRows();
+//Create headings for results columns
+sh.getRow(0).createCell(3).setCellValue("Result");
+//Skip 1st row(index=0) because it has names to columns
+//Start from 2nd row(index=1)
+for(int i=1;i&lt;nour;i++)
+{
+	def df=new DataFormatter();
+	def a=df.formatCellValue(sh.getRow(i).getCell(0));
+	def b=df.formatCellValue(sh.getRow(i).getCell(1));
+	def c=df.formatCellValue(sh.getRow(i).getCell(2));
+	//Set values to properties
+	def tc=testRunner.testCase;
+	tc.setPropertyValue("fc",a);
+	tc.setPropertyValue("tc",b);
+	tc.setPropertyValue("date",c);
+	def ts=tc.getTestStepByName("Request1");
+	//Redefine "testRunner" and "testStepContext" objects for SOAP
+	testRunner=new WsdlTestCaseRunner(tc,null);
+	testStepContext=new WsdlTestRunContext(ts);
+	//Submit parameirized request to Service and store response
+	ts.run(testRunner,testStepContext);
+	def res=ts.getPropertyValue("response");
+	log.info(res);
+	//Analyzing response
+	def gu=new GroovyUtils(context);
+	def holder=gu.getXmlHolder(res);
+	def output=holder.getNodeValue("//*:GetConversionRateResult");
+	sh.getRow(i).createCell(3).setCellValue(output);
+}
+//Save excel file changes
+def fo=new FileOutputStream(f);
+wb.write(fo);
+fi.close();
+fo.close();</script></con:config></con:testStep><con:properties><con:property><con:name>fc</con:name><con:value>AUD</con:value></con:property><con:property><con:name>tc</con:name><con:value>INR</con:value></con:property><con:property><con:name>date</con:name><con:value>2021-05-06T00:00:00</con:value></con:property></con:properties></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
