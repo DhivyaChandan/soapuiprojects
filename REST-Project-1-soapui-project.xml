@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="6c034a12-71dc-470a-a15b-8af62bca91fe" activeEnvironment="Default" name="REST Project 1" resourceRoot="" soapui-version="5.6.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="1a1f10ed-38ec-47a3-9583-4ff5aeeb0d48" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://jsonplaceholder.typicode.com" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint></con:endpoints><con:resource name="1" path="/posts/{id}" id="30af1e83-9ea7-434d-a086-34fd711b4674"><con:settings/><con:parameters><con:parameter><con:name>id</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="1 1" id="02eb6bba-94f3-4048-9b60-a82c653af3d8" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:ns="https://jsonplaceholder.typicode.com/posts/1">ns:Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>404</con:status><con:params/><con:element>Fault</con:element></con:representation><con:request name="Request 1" id="bfff61fe-cc88-4076-b470-4e76149a70b2" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint><con:request/><con:originalUri>https://jsonplaceholder.typicode.com/posts/1</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="id" value="1" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>id</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:testSuite id="62d225af-d533-47a0-b570-82eeeecbc6a5" name="TestSuite 1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="066c200d-81ab-405a-add7-61f088cdc71e" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="Request1" id="b44160ce-e819-456b-81ed-e2d9849f7d06"><con:settings/><con:config service="https://jsonplaceholder.typicode.com" resourcePath="/posts/{id}" methodName="1 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Request1" id="bfff61fe-cc88-4076-b470-4e76149a70b2" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint><con:request/><con:originalUri>https://jsonplaceholder.typicode.com/posts/1</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="id" value="50" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>id</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Groovy Script" id="6cb44e7c-5dcb-417e-b477-a914a6efd55e"><con:settings/><con:config><script>import groovy.json.JsonSlurper;
+
+def step=testRunner.testCase.getTestStepByName("Request1");
+step.setPropertyValue("id","100");
+def res=testRunner.runTestStepByName("Request1").getResponse();
+def jsonres=res.getContentAsString();
+log.info(jsonres);
+JsonSlurper js=new JsonSlurper();
+Map m=js.parseText(jsonres); //json response deserilaization
+//Way-1
+String t=m.title;
+log.info(t);
+//Way-2
+String b=m.get("body");
+log.info(b);
+</script></con:config></con:testStep><con:testStep type="groovy" name="Groovy Script2" id="84d5a671-c5f2-4598-b125-24231ff6e84f"><con:settings/><con:config><script>import groovy.json.JsonSlurper;
+//Open existing file for data reading
+def f1=new File("C:\\Users\\Chandan\\eclipse-workspace\\soapuiworkspace\\testdata.txt");
+def fr=new FileReader(f1);
+def br=new BufferedReader(fr);
+
+//Create a new file or update an existing file for data writing
+def f2=new File("C:\\Users\\Chandan\\eclipse-workspace\\soapuiworkspace\\testresults.txt");
+def fw=new FileWriter(f2);
+def bw=new BufferedWriter(fw);
+//Parameterize request parameters
+def x;
+while((x=br.readLine())!=null)
+{
+	def step=testRunner.testCase.getTestStepByName("Request1");
+	step.setPropertyValue("id",x);
+	def res=testRunner.runTestStepByName("Request1").getResponse();
+	def jsonres=res.getContentAsString();      
+	def js=new JsonSlurper();
+	Map m=js.parseText(jsonres); //json response deserialization
+	//Way-1
+	def t=m.title;
+	bw.write("Using Groovy-Java"+"&lt;---->"+t+"&lt;---->");
+	//Way-2 
+	def b=m.get("body");
+	bw.write(b);
+	bw.newLine();
+}
+bw.close();
+br.close();
+fr.close();
+fw.close();</script></con:config></con:testStep><con:testStep type="groovy" name="Groovy Script3" id="0a0334b0-a756-47b4-8398-9735909cb0a0"><con:settings/><con:config><script>//use POI-OOXML 3.9 because it has xmlbeans 2.3.0
+//As of now, SOAPUI tool support xmlbeans 2.3.0 only
+import groovy.json.JsonSlurper;
+import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+
+//Open file in read mode
+File f=new File("C:\\Users\\Chandan\\eclipse-workspace\\soapuiworkspace\\Book1.xlsx");
+FileInputStream fi=new FileInputStream(f);
+Workbook wb=WorkbookFactory.create(fi);
+Sheet sh=wb.getSheet("Sheet1");
+int nour=sh.getPhysicalNumberOfRows();
+//Create headings for results columns
+sh.getRow(0).createCell(1).setCellValue("Title");
+sh.getRow(0).createCell(2).setCellValue("Body");
+//Skip 1st row(index=0) because it has names to columns
+//Start from 2nd row(index=1)
+for(int i=1;i&lt; nour;i++)
+{
+	def df=new DataFormatter();
+	def x=df.formatCellValue(sh.getRow(i).getCell(0));
+	def step=testRunner.testCase.getTestStepByName("Request1");
+	step.setPropertyValue("id",x);
+	def res=testRunner.runTestStepByName("Request1").getResponse();
+	def jsonres=res.getContentAsString();
+	log.info(jsonres);
+	def js=new JsonSlurper();
+	Map m=js.parseText(jsonres); //json response deserialization
+	//Way-1
+	def t=m.title;
+	//Way-2 
+	def b=m.get("body");
+	//Write output into excel file sheet
+	sh.getRow(i).createCell(1).setCellValue(t);
+	sh.getRow(i).createCell(2).setCellValue(b);
+}
+//Save excel file changes
+def fo=new FileOutputStream(f);
+wb.write(fo);
+fi.close();
+fo.close();</script></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
